@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/calculator.ico">
     <link rel="stylesheet" href="style.css">
     <title>Calculator</title>
 </head>
@@ -12,30 +13,25 @@
         <h1>Calculator</h1>
         <div class="container">
             <div class="calculator-container">
-                <div class="text">
-                    <p></p>
-                </div>
+                <input id="display" readonly>
                 <div class="calculator">
-                    <button class="btns">AC</button>
-                    <button class="btns">C</button>
-                    <button class="btns">+/-</button>
-                    <button class="btns">&divide;</button>
-                    <button class="btns">7</button>
-                    <button class="btns">8</button>
-                    <button class="btns">9</button>
-                    <button class="btns">&times;</button>
-                    <button class="btns">4</button>
-                    <button class="btns">5</button>
-                    <button class="btns">6</button>
-                    <button class="btns">-</button>
-                    <button class="btns">1</button>
-                    <button class="btns">2</button>
-                    <button class="btns">3</button>
-                    <button class="btns">+</button>
-                    <button class="btns">%</button>
-                    <button class="btns">0</button>
-                    <button class="btns">.</button>
-                    <button class="btns">=</button>
+                    <button class="btns" onclick="addToScreen('7')">7</button>
+                    <button class="btns" onclick="addToScreen('8')">8</button>
+                    <button class="btns" onclick="addToScreen('9')">9</button>
+                    <button class="btns operators" onclick="addToScreen('/')">&divide;</button>
+                    <button class="btns" onclick="addToScreen('4')">4</button>
+                    <button class="btns" onclick="addToScreen('5')">5</button>
+                    <button class="btns" onclick="addToScreen('6')">6</button>
+                    <button class="btns operators" onclick="addToScreen('*')">&times;</button>
+                    <button class="btns" onclick="addToScreen('1')">1</button>
+                    <button class="btns" onclick="addToScreen('2')">2</button>
+                    <button class="btns" onclick="addToScreen('3')">3</button>
+                    <button class="btns operators" onclick="addToScreen('-')">-</button>
+                    <button class="btns" onclick="addToScreen('.')">.</button>
+                    <button class="btns" onclick="addToScreen('0')">0</button>
+                    <button class="btns" onclick="calculate()">=</button>
+                    <button class="btns operators" onclick="addToScreen('+')">+</button>
+                    <button class="btns" onclick="clearScreen()">C</button>
                 </div>
             </div>
         </div>
