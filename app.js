@@ -2,7 +2,11 @@ let btngroup = document.querySelectorAll('.btns')
 let p = document.querySelector('p')
 let display = document.getElementById('display')
 
+
 function addToScreen(a) {
+    if(display.value === "Error") {
+        clearScreen();
+    }
     display.value += a;
 }
 

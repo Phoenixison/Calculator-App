@@ -11,12 +11,13 @@ body {
 }
 
 h1 {
-    width: auto;
+    width: fit-content;
     font-size: 6vmin;
-    color: whitesmoke;
-    text-shadow: 0px 2px 0.5em white;
-    margin-top: 3vh;
-    margin-bottom: 5vh;
+    color: transparent;
+    text-shadow: 0px 2px 0.9em white;
+    background-image: linear-gradient(to bottom right,#FF0060,#F6FA70,#00DFA2,#0079FF,#FF0060);
+    background-clip: text;
+    margin: 3vh auto 5vh;
 }
 
 .container {
@@ -28,11 +29,44 @@ h1 {
 }
 
 .calculator-container {
+    position: relative;
     display: flex;
     flex-flow: column;
-    box-shadow: 0px 0px 1em white, 4px 0px 0.5em red, 0px 4px 0.5em blue;
     border-radius: 3vmin;
-    overflow: hidden;
+}
+
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.calculator-container::after, .calculator-container::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 100%;
+    height: 100%;
+    background-image: conic-gradient(from var(--angle),#FF0060,#F6FA70,#00DFA2,#0079FF,#FF0060);
+    z-index: -1;
+    padding: .2vmin;
+    animation: spin 20s linear infinite;
+}
+
+.calculator-container::before {
+    filter: blur(1rem);
+    opacity: 50%;
+}
+
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+    to {
+        --angle: 360deg;
+    }
 }
 
 #display {
